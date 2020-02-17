@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Registration form Validation in js</title>
+        <script type="text/javascript">
+        function Validate()
+        {
+            var user=document.forms["form"]["name"].value;
+            var email=document.forms["form"]["email"].value;
+            var pass =document.forms["form"]["pass"].value;
+            var cpass=document.forms["form"]["pass1"].value;
+            var mob=document.forms["form"]["mob"].value;
+
+
+
+            if(user=="")
+            {
+                alert("username required");
+                return false;
+            }
+            if(email=="")
+            {
+                alert("Email required");
+                return false;
+            }
+            if(pass=="")
+            {
+                alert("Password required");
+                return false;
+            }
+            if(cpass=="")
+            {
+                alert("Password required");
+                return false;
+            }
+
+            if(pass.length<8)
+            {
+                alert("Password must be at least 8 digit required");
+                return false;
+            }
+            if(mob=="")
+            {
+                alert("Mobile No required");
+                return false;
+            }
+
+            if(mob.length!=10)
+            {
+                alert("please enter valid 10 digit Mobile No");
+                return false;
+            }
+
+            if(pass!=cpass)
+            {
+                alert("Invalid,please Enter same password");
+                return false;
+            }
+        }
+
+        </script>
+        
+
+    </head>
+    <style>
+        body{
+        
+            background-color: yellow;
+            font-family: Arial;
+            
+        }
+        .div1{
+            background-color: white;
+            height: max-content;
+            width: 20%;
+            padding: 25px 35px;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 10%;
+            
+            
+            
+        }
+        .button{
+            width: 50%;
+            height: 40px;
+            color: white;
+            background-color:black;
+            border-radius: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+
+        }
+        .h5{
+            color: gray;
+            
+        }
+    </style>
+    <body>
+        <div class="div1">
+            <form name="form" align="center" action="login.html" onsubmit="return Validate()" method="POST">
+                <h2 align="center" >REGISTER</h2><br> 
+
+                <input type="text" placeholder="Username" name="name" size="35px" style="height:30px;" > <br><br>
+           
+                <input type="email" placeholder="Email" name="email" size="35px" style="height:30px;"> <br><br>
+           
+                <input type="password" placeholder="Password" name="pass" size="35px" style="height:30px;"> <br><br>
+
+                <input type="password" placeholder="Confirm Password" name="pass1" size="35px" style="height:30px;"><br><br>
+           
+                <input type="tel" placeholder="Mobile No" name="mob" size="35px" style="height:30px;"> <br><br>
+
+                <input type="submit" value="Sign up" class="button">
+                <h5 class="h5">Already have an account? <a href="#" style="color: dodgerblue;">login here</a></h5>
+           
+            </form>
+        </div>
+    </body>
+</html>
